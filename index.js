@@ -27,3 +27,12 @@ const connect = async () => {
         throw err;
     }
 }
+
+app.use((req, res, next) => {
+    console.log("Middleware Used");
+}) // Delete in production
+
+app.listen(process.env.PORT || 8800, () => {
+    connect();
+    console.log("Server Started");
+});
