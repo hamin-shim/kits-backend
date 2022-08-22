@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import compression from 'compression';
 import mongoose from 'mongoose';
+import usersRoute from './routes/users.js';
 
 const app = express();
 dotenv.config();
@@ -18,6 +19,9 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression());
+
+app.use("/api/users", usersRoute);
+
 
 const connect = async () => {
     try {
