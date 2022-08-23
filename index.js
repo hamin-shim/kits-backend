@@ -7,7 +7,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import compression from 'compression';
 import mongoose from 'mongoose';
-import usersRoute from './routes/users.js';
+import usersRoute from './routes/user.js';
+import postRoute from './routes/post.js'
 
 const app = express();
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(helmet());
 app.use(compression());
 
 app.use("/api/users", usersRoute);
+app.use("api/posts", postRoute);
 
 
 const connect = async () => {
