@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import PersonAccountsSchema from "./person_accounts";
 import JobTypesSchema from "./job_types";
+import JobSkillSchema from "./job_skills";
 
 const { Schema } = mongoose;
 
@@ -35,10 +36,7 @@ const PersonSchema = new mongoose.Schema({
             }
         }],
         skills: [{
-            name:{
-                type:String,
-                required: true
-            },
+            skill:[JobSkillSchema],
             level:{
                 type:String,
                 required: true
