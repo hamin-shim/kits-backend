@@ -1,12 +1,14 @@
 import mongoose from "mongoose";
+import JobTypesSchema from "./job_types";
 
 const { Schema } = mongoose;
 
-const HashTagsSchema = new mongoose.Schema({
+const JobFamilesSchema = new mongoose.Schema({
     name:{
         type:String,
         required: true
-    }
+    },
+    job_types: [JobTypesSchema]
 })
 
-export default mongoose.model("HashTag", HashTagsSchema);
+export default mongoose.model("JobFamiles", JobFamilesSchema);

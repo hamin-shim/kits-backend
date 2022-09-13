@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import PersonAccountsSchema from "./person_accounts";
+import JobTypesSchema from "./job_types";
 
 const { Schema } = mongoose;
 
@@ -13,8 +14,8 @@ const PersonSchema = new mongoose.Schema({
     },
     profile: {
         introduction: String,
-        job_types: [],
-        prefer_adress: [],
+        job_types: [JobTypesSchema],
+        prefer_address: [],
         authroized: {
             type: Boolean,
             required: true
