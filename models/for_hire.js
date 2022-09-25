@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import PersonSchema from "./person";
+import PersonSchema from "./Person";
 import JobTypesSchema from "./job_types";
 
 const { Schema } = mongoose;

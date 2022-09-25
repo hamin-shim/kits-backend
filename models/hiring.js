@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import CompanySchema from "./companies";
 import JobTypeSchema from "./job_types";
-import AddressSchema from "./address";
-import LocationSchema from "./location";
+import AddressSchema from "./Address";
+import LocationSchema from "./Location";
 
 const { Schema } = mongoose;
 

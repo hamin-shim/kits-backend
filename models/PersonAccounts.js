@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import AddressSchema from "./address";
-import LocationSchema from "./location";
+import AddressSchema from "./Address.js";
+import LocationSchema from "./Location.js";
 
 const { Schema } = mongoose;
 
