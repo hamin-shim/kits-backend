@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose
 import AddressSchema from "./Address";
 import LocationSchema from "./Location";
 
