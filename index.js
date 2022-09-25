@@ -9,6 +9,7 @@ import compression from 'compression';
 import mongoose from 'mongoose';
 import usersRoute from './routes/user.js';
 import postRoute from './routes/post.js'
+import staticRoute from './routes/static.js';
 
 const app = express();
 dotenv.config();
@@ -22,7 +23,8 @@ app.use(helmet());
 app.use(compression());
 
 app.use("/api/users", usersRoute);
-app.use("api/posts", postRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/static", staticRoute);
 
 
 const connect = async () => {
@@ -38,7 +40,7 @@ app.use((req, res, next) => {
     console.log("Middleware Used");
 }) // Delete in production
 
-app.listen(process.env.PORT || 8800, () => {
+app.listen(process.env.PORT || 8080, () => {
     connect();
     console.log("Server Started");
 });

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import LocationSchema from "./location";
+import LocationSchema from "./Location";
 
 const { Schema } = mongoose;
 

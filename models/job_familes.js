@@ -8,7 +8,10 @@ const JobFamilesSchema = new mongoose.Schema({
         type:String,
         required: true
     },
-    job_types: [JobTypesSchema]
+    job_types: {
+        type: [String],
+        required: true
+    }
 })
 
 export default mongoose.model("JobFamiles", JobFamilesSchema);

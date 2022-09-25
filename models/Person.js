@@ -1,22 +1,19 @@
 import mongoose from "mongoose";
-import PersonSchema from "./Person";
+import PersonAccountsSchema from "./PersonAccounts.js";
 import JobTypesSchema from "./job_types";
+import JobSkillSchema from "./JobSkills.js";
 
 const { Schema } = mongoose;
 
-const ForHireSchema = new mongoose.Schema({
-    person:[PersonSchema],
-    status:{
-        type:String,
-        required:true,
-        default:"applied"
+const PersonSchema = new mongoose.Schema({
+    accounts: [PersonAccountsSchema],
+    for_hire: [],
+    is_waiting_offer: {
+        type: Boolean,
+        required: true,
+        default: false
     },
-    apply_at:new Date(),
-    is_deprecated:{
-        type:Boolean,
-        default:false
-    },
-    detail:{ // person.profile에 있는거 전부 끌어왔는데 이게 맞는건지 모르겠음
+    profile: {
         introduction: String,
         job_types: [JobTypesSchema],
         prefer_address: [],
@@ -52,8 +49,8 @@ const ForHireSchema = new mongoose.Schema({
                 required: true
             },
             job_name : String,
-            start_at : { //  Date로 저장할지 vs "2022-01-03"의 문자로 저정할지 확인 필요
-                type:String,
+            start_at : {
+                type: Date,
                 required: true
             }, 
             end_at : String,
@@ -99,6 +96,6 @@ const ForHireSchema = new mongoose.Schema({
             }
         }
     }
-})
+});
 
-export default mongoose.model("ForHire", ForHireSchema);
+export default mongoose.model("Person", PersonSchema);
